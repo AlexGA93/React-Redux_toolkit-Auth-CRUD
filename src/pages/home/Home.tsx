@@ -1,7 +1,7 @@
 import { BarChartBox, BigChartBox, ChartBox, PieChartBox } from '../../components';
 import TopBox from '../../components/topBox/TopBox';
 import { areaData, barChartBoxRevenue, barChartBoxVisit, chartBoxConversion, chartBoxProduct, chartBoxRevenue, chartBoxUser, pieData } from '../../data/data';
-import './Home.scss';
+import './home.scss';
 
 const Home = () => {
   return (
