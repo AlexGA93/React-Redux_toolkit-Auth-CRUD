@@ -1,0 +1,60 @@
+.navbar {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        gap: 10px;
+    }
+    
+    .icons {
+        display:  flex;
+        align-items: center;
+        gap: 20px;
+
+        .notification{
+            // To make the first relative parent to the span
+            position: relative;
+            span {
+                background-color: red;
+                color: white;
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                font-size: 12px;
+                
+                // move 
+                /*
+                Positioned itself according to its first relative parent
+                In this case it's our body. But it should be out notification container
+                */
+                position: absolute;
+                top: -10px;
+                right: -10px;
+
+                // positioning value at the span center
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        .user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            
+            img {
+                width: 26px;
+                height: 26px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+        }
+    }
+}
