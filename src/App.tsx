@@ -1,58 +1,48 @@
 // libreries
-import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 // components
-import { Footer,Menu ,Navbar } from './components';
+import { ProtectedRoute } from './components';
 // pages
-import { Home, Products, Users, Login, User, Product } from './pages';
-//  types
-import { BrowserRouterRoute } from "./types/types";
+import { Home, Layout, Login, Products, Users, Welcome } from './pages';
+
 // styles
-import './styles/global.scss';
+import './scss/main.scss';
 
 function App() {
 
-  // custom layout with Navbar | Menu | Footer
-  const Layout = (): JSX.Element => (
-    <div className="main">
-      <Navbar />
-      <div className="container">
-        <div className="menuContainer">
-          <Menu />
-        </div>
-        <div className="contentContainer">
-          {/* Pages */}
-          <Outlet />
-        </div>
-      </div>
-      <Footer />
-    </div>
+  // isLogged
+  let isLogged: boolean = true;
+
+  return (
+    <BrowserRouter>
+      <Routes>
+
+        <Route path="/" element={<Welcome />} />
+        <Route path="login" element={<Login />} />
+
+        <Route path="layout" element={isLogged ? <Layout /> : <Navigate to={"/"} replace />} >
+          {/* home */}
+          <Route path="home" element={<Home />} />
+          {/* profile */}
+          {/* users */}
+          <Route path="users" element={<Users />} />
+          {/* products */}
+          <Route path="products" element={<Products />} />
+          {/* orders */}
+          {/* posts */}
+          {/* elements */}
+          {/* notes */}
+          {/* forms ?? */}
+          {/* calendar */}
+          {/* settings */}
+          {/* backups */}
+          {/* charts */}
+          {/* logs */}
+        </Route>
+
+      </Routes>
+    </BrowserRouter>
   );
-
-  /**
-   * TODO: protected route in element field
-   */
-  // React router dom client-side browser router
-  const routes: BrowserRouterRoute[] = [
-    {
-      path: "/",
-      element: <Layout />,
-      children: [
-        { path: '/', element: <Home /> },
-        { path: '/users', element: <Users /> },
-        { path: '/products', element: <Products /> },
-        { path: '/users/:id', element: <User /> },
-        { path: '/products/:id', element: <Product /> }
-      ]
-    },
-    {
-      path: 'login',
-      element: <Login />
-    }
-  ];
-
-  const router = createBrowserRouter(routes);
-
-  return <RouterProvider router={router} />;
 }
 
 export default App;

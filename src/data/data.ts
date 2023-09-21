@@ -24,7 +24,7 @@ export const menu: menuItemType[] = [
       {
         id: 2,
         title: "Profile",
-        url: "/users/1",
+        url: "/profile",
         icon: "user.svg",
       },
     ],
@@ -36,13 +36,13 @@ export const menu: menuItemType[] = [
       {
         id: 1,
         title: "Users",
-        url: "/users",
+        url: "/layout/users",
         icon: "user.svg",
       },
       {
         id: 2,
         title: "Products",
-        url: "/products",
+        url: "/layout/products",
         icon: "product.svg",
       },
       {

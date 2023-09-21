@@ -1,0 +1,26 @@
+
+a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  
+.welcome{
+    height: 100vh;
+  }
+
+  .container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .menuContainer {
+    width: 250px;
+    padding: 5px 20px;
+    border-right: 2px solid $soft-bg;
+  }
+  
+  .contentContainer {
+    padding: 5px 20px;
+    // width: 100%;
+  }

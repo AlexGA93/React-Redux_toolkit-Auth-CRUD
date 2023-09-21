@@ -5,7 +5,7 @@ import './home.scss';
 
 const Home = () => {
   return (
-    <main className='home'>
+    <main className='home grid'>
       <div className="box box1"><TopBox /></div>
       <div className="box box2"><ChartBox {...chartBoxUser} /></div>
       <div className="box box3"><ChartBox {...chartBoxProduct} /></div>

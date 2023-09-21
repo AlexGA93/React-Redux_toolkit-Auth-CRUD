@@ -1,0 +1,40 @@
+// abstracts
+@import './abstracts/colors';
+@import './abstracts/mixins';
+// base
+@import './base/base';
+@import './base/typography';
+// components
+// @import './components/';
+// home
+@import './home/login';
+@import './home/welcome';
+// ...
+// layout
+@import './layout/navbar';
+@import './layout/home';
+@import './layout/menu';
+@import './layout/grid';
+@import './layout/footer';
+// externals
+@import "atropos/scss";
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-image: url('../assets/imgs/nebulosa.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $main-color;
+}
+
+
+
+
+
+

@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { menu } from '../../data/data';
 import './menu.scss';
 import { listItemType, menuItemType } from '../../types/types';
+import { handleMenuIcon } from '../../utils/utils';
+
 
 const Menu = () => {
   return (
@@ -13,7 +15,9 @@ const Menu = () => {
             {
               menuItem.listItems.map((listItem: listItemType) => (
                 <Link to={listItem.url} className='listItem' key={listItem.id}>
-                  <img src={listItem.icon} alt="menu_icon" />
+                  
+                  <img src={handleMenuIcon(listItem.icon)} alt="icon" />
+                  
                   <span className='listItemTitle'>{listItem.title}</span>
                 </Link>
               ))
@@ -22,6 +26,7 @@ const Menu = () => {
         ))
       }      
     </aside>
+    
   )
 }
 

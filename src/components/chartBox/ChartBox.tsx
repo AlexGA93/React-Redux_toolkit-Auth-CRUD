@@ -9,7 +9,7 @@ const ChartBox = (props: chartBoxType) => {
     <section className="chartBox">
       <div className="boxInfo">
         <div className="title">
-          <img src={props.icon} alt={props.title} />
+          <img src={props.icon} alt={props.title} style={{color: props.color}}/>
           <span>{props.title}</span>
         </div>
         <h1>{props.number}</h1>

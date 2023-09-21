@@ -7,5 +7,6 @@ export { default as Footer } from './footer/Footer';
 export { default as Menu } from './menu/Menu';
 export { default as Navbar } from './navbar/Navbar';
 export { default as PieChartBox } from './pieChartBox/PieChartBox';
+export { default as ProtectedRoute } from './protectedRoute/ProtectedRoute';
 export { default as Single } from './single/Single';
 export { default as TopBox } from './topBox/TopBox';

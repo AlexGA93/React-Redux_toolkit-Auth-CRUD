@@ -1,6 +1,7 @@
 import { GridColDef } from "@mui/x-data-grid";
 
 export interface BrowserRouterRoute {
+    id?:string;
     path: string;
     element: JSX.Element;
     children?: BrowserRouterRoute[]
@@ -145,3 +146,8 @@ export interface PropTypes {
     slug: string;
     setOpen?: React.Dispatch<React.SetStateAction<boolean>>
 }
+
+export interface LoginFormType {
+    email: string;
+    password: string;
+  }

@@ -1,0 +1,21 @@
+.home {
+    .box {
+        padding: 20px;
+        border-radius: 10px;
+        border: 2px solid $soft-bg;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    }
+
+    // It height willl be 3 times a normal row
+    .box1 , .box4{
+        grid-column: span 1;
+        grid-row: span 3;
+    }
+
+    // It height willl be 2 times a normal row and column
+    .box7 {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+}
