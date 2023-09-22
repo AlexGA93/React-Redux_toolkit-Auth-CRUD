@@ -11,7 +11,6 @@ const Layout = () => {
           <Menu />
         </div>
         <div className="contentContainer">
-          <h1>content</h1>
           <Outlet />
         </div>
       </div>

@@ -1,12 +1,11 @@
 import { DataGrid, GridColDef, GridToolbar } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
-import { PropTypes } from "../../types/types";
-import View from '../../assets/icons/view.svg';
 import Delete from '../../assets/icons/delete.svg';
+import View from '../../assets/icons/view.svg';
+import { PropTypes } from "../../types/types";
 import "./dataTable.scss";
 
 const DataTable = ({ columns, rows, slug }: PropTypes) => {
-  // console.log(rows);
   
   const handleDelete = (userId: number) => {
     // axios delete
@@ -20,7 +19,7 @@ const DataTable = ({ columns, rows, slug }: PropTypes) => {
     width: 200,
     renderCell: (params) => (
       <div className="action">
-        <Link to={`/${slug}/${params.row.id}`}>
+        <Link to={`/layout/${slug}/${params.row.id}`}>
           <img src={View} alt="view" />
         </Link>
         <div className="delete" onClick={() => handleDelete(params.row.id)}>

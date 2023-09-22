@@ -214,6 +214,7 @@ export const chartBoxProduct: chartBoxType = {
     { name: "Sat", products: 450 },
   ],
 };
+
 export const chartBoxRevenue: chartBoxType = {
   color: "teal",
   icon: "/revenueIcon.svg",
@@ -231,6 +232,7 @@ export const chartBoxRevenue: chartBoxType = {
     { name: "Sat", revenue: 450 },
   ],
 };
+
 export const chartBoxConversion: chartBoxType = {
   color: "gold",
   icon: "/conversionIcon.svg",
@@ -372,7 +374,6 @@ export const areaData: AreaDataType[] = [
     electronic: 2100,
   },
 ];
-
 
 export const userRows: UserRowType[] = [
   {
@@ -701,6 +702,7 @@ export const singleUser: singleType = {
     },
   ],
 };
+
 export const singleProduct: singleType = {
   id: 1,
   title: "Playstation 5 Digital Edition",

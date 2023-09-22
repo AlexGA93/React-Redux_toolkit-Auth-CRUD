@@ -17,7 +17,7 @@ const Login = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(formValue);
-    navigate("/layout/home");
+    navigate("/layout/");
     // call to login redux function
   };
 
@@ -29,57 +29,56 @@ const Login = () => {
           activeOffset={40}
           shadow={false}
         >
-      <div className="card">
+      <div className="container">
         
-          <h1 className="card__title">Login</h1>
-        
+          <h1 className="container__title">Login</h1>
 
-        <form className="form" onSubmit={handleSubmit}>
-          <fieldset className="form__fieldset fieldset__email">
-            <label htmlFor="email">Email:</label>
-            <input
-              id="email"
-              type="text"
-              value={formValue.email}
-              onChange={(e) =>
-                setFormValue({ ...formValue, email: e.target.value })
-              }
-              placeholder="Email..."
-            />
-          </fieldset>
-          <fieldset className="form__fieldset fieldset__password">
-            <label htmlFor="password">Password:</label>
-            <input
-              id="password"
-              type="password"
-              value={formValue.password}
-              onChange={(e) =>
-                setFormValue({ ...formValue, password: e.target.value })
-              }
-              placeholder="Password..."
-            />
-          </fieldset>
-          <div className="buttons">
-            <Button
-            className="button"
-            type="submit"
-            variant="contained"
-            color="success"
-          >
-            Login
-          </Button>
-          <Button
-            className="button"
-            type="submit"
-            variant="contained"
-            color="error"
-            onClick={() => navigate("/")}
-          >
-            Cancel
-          </Button>
-          </div>
-          
-        </form>
+          <form className="container__form" onSubmit={handleSubmit}>
+            <fieldset className="form__fieldset fieldset__email">
+              <label htmlFor="email">Email:</label>
+              <input
+                id="email"
+                type="text"
+                value={formValue.email}
+                onChange={(e) =>
+                  setFormValue({ ...formValue, email: e.target.value })
+                }
+                placeholder="Email..."
+              />
+            </fieldset>
+            <fieldset className="form__fieldset fieldset__password">
+              <label htmlFor="password">Password:</label>
+              <input
+                id="password"
+                type="password"
+                value={formValue.password}
+                onChange={(e) =>
+                  setFormValue({ ...formValue, password: e.target.value })
+                }
+                placeholder="Password..."
+              />
+            </fieldset>
+            <fieldset className="form__fieldset fieldset__buttons">
+              <Button
+                className="button"
+                type="submit"
+                variant="contained"
+                color="success"
+              >
+                Login
+              </Button>
+              <Button
+                className="button"
+                type="submit"
+                variant="contained"
+                color="error"
+                onClick={() => navigate("/")}
+              >
+                Cancel
+              </Button>
+            </fieldset>
+          </form>
+        
       </div>
       </Atropos>
     </div>
