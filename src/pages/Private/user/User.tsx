@@ -1,5 +1,5 @@
-import { Single } from '../../components';
-import { singleUser } from '../../data/data';
+import { Single } from '../../../components';
+import { singleUser } from '../../../data/data';
 import './user.scss';
 
 const User = () => {

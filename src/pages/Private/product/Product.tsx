@@ -1,5 +1,5 @@
-import { Single } from '../../components';
-import { singleProduct } from '../../data/data';
+import { Single } from '../../../components';
+import { singleProduct } from '../../../data/data';
 import './product.scss';
 
 const Product = () => {

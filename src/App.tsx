@@ -1,70 +1,42 @@
 // libreries
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 // components
-import { ProtectedRoute } from "./components";
-// pages
-import {
-  Home,
-  Layout,
-  Login,
-  Product,
-  Products,
-  User,
-  Users,
-  Welcome,
-} from "./pages";
-
+import { Footer, Navbar } from "./components";
 // styles
+import { Suspense, lazy } from "react";
+import { AuthGuard, PrivateRoutes, PublicRoutes } from "./routes";
 import "./scss/main.scss";
+import { NotFoundRoute } from "./utils/NotFoundRoute";
 
-/**
- * TODO: 
- *  - react-redux
- *  - store
- *  - methods
- *  - navbar
- *  - components
- */
+const publicPath = './pages/Public/Public';
+const privatePath = './pages/Private/Private';
+// lazy loading
+const Public = lazy(() => import(publicPath));
+const Private = lazy(() => import(privatePath));
 
 function App() {
-  // isLogged
-  let isLogged: boolean = true;
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Welcome />} />
-        <Route path="login" element={<Login />} />
-        <Route
-          path="layout"
-          element={isLogged ? <Layout /> : <Navigate to={"/"} replace />}
-        >
-          {/* layout/ */}
-          <Route index element={<Home />} />
-          {/* layout/profile */}
-          {/* layout/users */}
-          <Route path="users">
-            <Route index element={<Users />} />
-            <Route path=":id" element={<User />} />
+    <Suspense fallback={<>LOADING COMPONENT</>}>
+      <BrowserRouter>
+        {/* NAVBAR */}
+        <Navbar />
+        <NotFoundRoute>
+          {/* ROOT */}
+          <Route path="/" element={PrivateRoutes.PRIVATE} />
+          {/* PUBLIC ROUTES */}
+          <Route path={`${PublicRoutes.PUBLIC}/*`} element={<Public />} />
+          {/* PRIVATE ROUTES */}
+          <Route element={<AuthGuard validation={true} />}>
+            {/* PRIVATE MODULE */}
+            <Route path={`${PrivateRoutes.PRIVATE}/*`} element={<Private />} />
           </Route>
-          {/* layout/products */}
-          <Route path="products">
-            <Route index element={<Products />} />
-            <Route path=":id" element={<Product />} />
-          </Route>
-          {/* orders */}
-          {/* posts */}
-          {/* elements */}
-          {/* notes */}
-          {/* forms ?? */}
-          {/* calendar */}
-          {/* settings */}
-          {/* backups */}
-          {/* charts */}
-          {/* logs */}
-        </Route>
-      </Routes>
-    </BrowserRouter>
+          {/* ROLE PROTECTED ROUTES */}
+        </NotFoundRoute>
+        {/* FOOTER */}
+        <Footer />
+      </BrowserRouter>
+    </Suspense>
   );
 }
 

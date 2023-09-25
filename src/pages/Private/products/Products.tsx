@@ -2,10 +2,10 @@ import { useState } from 'react';
 import SendIcon from '@mui/icons-material/Send';
 import './products.scss';
 import { Button } from '@mui/material';
-import DataTable from '../../components/dataTable/DataTable';
+import DataTable from '../../../components/dataTable/DataTable';
 import { GridColDef } from '@mui/x-data-grid';
-import { products } from '../../data/data';
-import Add from '../../components/add/Add';
+import { products } from '../../../data/data';
+import Add from '../../../components/add/Add';
 
 const columns: GridColDef[] = [
   { field: "id", headerName: "ID", width: 90 },

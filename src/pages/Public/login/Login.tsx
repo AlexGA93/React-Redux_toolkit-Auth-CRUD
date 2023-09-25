@@ -2,7 +2,7 @@ import Atropos from "atropos/react";
 import "./login.scss";
 import { Button } from "@mui/material";
 import { useState } from "react";
-import { LoginFormType } from "../../types/types";
+import { LoginFormType } from "../../../types/types";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
