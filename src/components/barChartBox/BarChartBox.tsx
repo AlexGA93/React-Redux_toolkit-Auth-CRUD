@@ -1,5 +1,5 @@
 import { Bar, BarChart, ResponsiveContainer, Tooltip } from "recharts";
-import { barChartBoxRevenueType } from "../../types/types";
+import { barChartBoxRevenueType } from "../../types/dataTypes";
 import "./barChartBox.scss";
 
 const BarChartBox = (props: barChartBoxRevenueType) => {

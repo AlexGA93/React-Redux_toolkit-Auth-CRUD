@@ -1,5 +1,8 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { PrivateRoutes, PublicRoutes } from "..";
+import { useSelector } from "react-redux";
+import { ReduxStoreType } from "../../types/reduxTypes";
+import { UserStateType } from "../../types";
 
 interface Props {
   validation: boolean;
@@ -7,13 +10,9 @@ interface Props {
 
 const AuthGuard = ({ validation }: Props) => {
   // check redux state
-  let provisionalState = {
-    name: "John",
-    email: "jDoe@,ail.com",
-    role: "admin",
-  };
+  const userState:UserStateType = useSelector((state: ReduxStoreType) => state.userReducer);
 
-  return provisionalState.name ? (
+  return userState.user.title ? (
     validation ? (
       <Outlet />
     ) : (

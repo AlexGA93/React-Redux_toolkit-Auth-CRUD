@@ -1,6 +1,6 @@
 import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
 import "./pieChartBox.scss";
-import { PieDataType } from "../../types/types";
+import { PieDataType } from "../../types/dataTypes";
 
 const PieChartBox = ({data}:{data: PieDataType[]}) => {
 

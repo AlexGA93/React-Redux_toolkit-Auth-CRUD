@@ -1,14 +1,4 @@
-import {
-  AreaDataType,
-  PieDataType,
-  ProductType,
-  UserRowType,
-  barChartBoxRevenueType,
-  chartBoxType,
-  menuItemType,
-  singleType,
-  topDealUserType,
-} from "../types/types";
+import { AreaDataType, PieDataType, ProductType, UserRowType, barChartBoxRevenueType, chartBoxType, menuItemType, singleType, topDealUserType } from "../types/dataTypes";
 
 export const menu: menuItemType[] = [
   {
@@ -181,7 +171,7 @@ export const topDealUsers: topDealUserType[] = [
 
 export const chartBoxUser: chartBoxType = {
   color: "#8884d8",
-  icon: "/userIcon.svg",
+  icon: "../assets/icons/userIcon.svg",
   title: "Total Users",
   number: "11.238",
   dataKey: "users",
@@ -199,7 +189,7 @@ export const chartBoxUser: chartBoxType = {
 
 export const chartBoxProduct: chartBoxType = {
   color: "skyblue",
-  icon: "/productIcon.svg",
+  icon: "../assets/icons/productIcon.svg",
   title: "Total Products",
   number: "238",
   dataKey: "products",
@@ -217,7 +207,7 @@ export const chartBoxProduct: chartBoxType = {
 
 export const chartBoxRevenue: chartBoxType = {
   color: "teal",
-  icon: "/revenueIcon.svg",
+  icon: "../assets/icons/revenueIcon.svg",
   title: "Total Revenue",
   number: "$56.432",
   dataKey: "revenue",
@@ -235,7 +225,7 @@ export const chartBoxRevenue: chartBoxType = {
 
 export const chartBoxConversion: chartBoxType = {
   color: "gold",
-  icon: "/conversionIcon.svg",
+  icon: "../assets/icons/conversionIcon.svg",
   title: "Total Ratio",
   number: "2.6",
   dataKey: "ratio",
@@ -631,6 +621,7 @@ export const singleUser: singleType = {
     email: "johndoe@gmail.com",
     phone: "123 456 789",
     status: "verified",
+    role: ""
   },
   chart: {
     dataKeys: [

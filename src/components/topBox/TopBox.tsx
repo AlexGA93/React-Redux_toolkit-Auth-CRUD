@@ -1,6 +1,6 @@
 import './topBox.scss';
 import { topDealUsers } from '../../data/data';
-import { topDealUserType } from '../../types/types';
+import { topDealUserType } from '../../types/dataTypes';
 
 const TopBox = () => {
   return (

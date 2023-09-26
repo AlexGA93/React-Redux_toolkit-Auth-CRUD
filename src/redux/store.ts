@@ -1,8 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { ReduxStoreType } from "../types/reduxTypes";
+import { userSlice } from "./states/user";
 
-interface ReduxAppStore {
-    user: any; // TODO: change this to proper type
-}
 
 // create redux store
-const reduxStore = configureStore({});
+export const reduxStore = configureStore<ReduxStoreType>({
+    reducer: {
+        userReducer: userSlice.reducer
+    }
+});

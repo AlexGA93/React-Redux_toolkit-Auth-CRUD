@@ -1,12 +1,16 @@
-import Atropos from "atropos/react";
-import "./login.scss";
 import { Button } from "@mui/material";
+import Atropos from "atropos/react";
 import { useState } from "react";
-import { LoginFormType } from "../../../types/types";
-import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { loginUser } from "../../../redux/states/user";
+import { PublicRoutes } from "../../../routes";
+import { LoginFormType } from "../../../types/dataTypes";
+import "./login.scss";
 
 const Login = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+  const dispatch = useDispatch<any>();
 
   // local state form
   const [formValue, setFormValue] = useState<LoginFormType>({
@@ -16,21 +20,25 @@ const Login = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formValue);
-    navigate("/layout/");
-    // call to login redux function
+    dispatch(loginUser(formValue))
+      .then((result: any) => {
+        console.log(result);
+        navigate("/private/layout");
+      })
+      .catch((err: any) => {
+        console.error(err);
+      });
   };
 
   return (
     <div className="login">
       <Atropos
-          className="my-atropos"
-          alwaysActive={true}
-          activeOffset={40}
-          shadow={false}
-        >
-      <div className="container">
-        
+        className="my-atropos"
+        alwaysActive={true}
+        activeOffset={40}
+        shadow={false}
+      >
+        <div className="container">
           <h1 className="container__title">Login</h1>
 
           <form className="container__form" onSubmit={handleSubmit}>
@@ -77,9 +85,16 @@ const Login = () => {
                 Cancel
               </Button>
             </fieldset>
+            <fieldset className="form__fieldset fieldset__register">
+              <p>
+                Not an account yet? register{" "}
+                <strong>
+                  <Link to={`/public/${PublicRoutes.REGISTER}`}>HERE!...</Link>
+                </strong>
+              </p>
+            </fieldset>
           </form>
-        
-      </div>
+        </div>
       </Atropos>
     </div>
   );

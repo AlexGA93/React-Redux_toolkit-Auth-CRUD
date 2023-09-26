@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./chartBox.scss";
 import { Line, LineChart, ResponsiveContainer, Tooltip } from "recharts";
-import { chartBoxType } from "../../types/types";
+import { chartBoxType } from "../../types/dataTypes";
 
 const ChartBox = (props: chartBoxType) => {
 

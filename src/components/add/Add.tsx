@@ -1,5 +1,5 @@
 import { GridColDef } from "@mui/x-data-grid";
-import { PropTypes } from "../../types/types";
+import { PropTypes } from "../../types/dataTypes";
 import "./add.scss";
 
 const Add = (props: PropTypes) => {

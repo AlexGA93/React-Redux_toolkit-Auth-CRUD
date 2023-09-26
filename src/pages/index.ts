@@ -7,4 +7,5 @@ export * from './Private/user';
 export * from './Private/users';
 export * from './Public';
 export * from './Public/login';
+export * from './Public/register';
 export * from './Public/welcome';

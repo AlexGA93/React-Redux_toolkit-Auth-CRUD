@@ -1,19 +1,15 @@
-import { Outlet } from "react-router-dom";
-import { Menu } from "../../../components";
+import { Navigate, Route } from "react-router-dom";
+import { PrivateRoutes } from "../../../routes";
+import { NotFoundRoute } from "../../../utils";
+import { Home } from "../home";
 import "./layout.scss";
 
-const Layout = () => {
+export const Layout = () => {
   return (
-    <div className="main">
-      <div className="container">
-        <div className="menuContainer">
-          <Menu />
-        </div>
-        <div className="contentContainer">
-          <Outlet />
-        </div>
-      </div>
-    </div>
+    <NotFoundRoute>
+      <Route path="/" element={<Navigate to={PrivateRoutes.HOME} />} />
+      <Route path={PrivateRoutes.HOME} element={<Home />} />
+    </NotFoundRoute>
   );
 };
 

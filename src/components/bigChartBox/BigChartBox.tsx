@@ -8,7 +8,7 @@ import {
   YAxis,
 } from "recharts";
 import "./bigChartBox.scss";
-import { AreaDataType } from "../../types/types";
+import { AreaDataType } from "../../types/dataTypes";
 
 const BigChartBox = ({data}:{data: AreaDataType[]}) => {
   return (

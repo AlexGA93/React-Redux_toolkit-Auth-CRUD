@@ -2,7 +2,7 @@ import { DataGrid, GridColDef, GridToolbar } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
 import Delete from '../../assets/icons/delete.svg';
 import View from '../../assets/icons/view.svg';
-import { PropTypes } from "../../types/types";
+import { PropTypes } from "../../types/dataTypes";
 import "./dataTable.scss";
 
 const DataTable = ({ columns, rows, slug }: PropTypes) => {

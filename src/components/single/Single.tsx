@@ -9,7 +9,7 @@ import {
   YAxis,
 } from "recharts";
 import "./single.scss";
-import { UserTypeActivity, UserTypeChartDataKey, singleType } from "../../types/types";
+import { UserTypeActivity, UserTypeChartDataKey, singleType } from "../../types/dataTypes";
 
 const Single = (props: singleType) => {
   return (
