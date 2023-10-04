@@ -28,6 +28,9 @@ export const loginUser = createAsyncThunk('user/login', async (formValue:LoginFo
 
   const singleUserResponse = await axios.get('http://localhost:3000/singleUser');
   const singleUser = singleUserResponse.data;
+
+  persistLocalStorage(userKey, singleUser);
+
   return singleUser;
 });
 

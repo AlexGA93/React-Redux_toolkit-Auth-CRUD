@@ -43,4 +43,19 @@ body {
   background-size: cover;
   color: $main-color;
 
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.app{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  .body {
+  min-height: 100%;
+}
 }

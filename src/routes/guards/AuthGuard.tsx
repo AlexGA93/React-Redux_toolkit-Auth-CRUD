@@ -1,8 +1,7 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { PrivateRoutes, PublicRoutes } from "..";
 import { useSelector } from "react-redux";
-import { ReduxStoreType } from "../../types/reduxTypes";
-import { UserStateType } from "../../types";
+import { UserStateType, ReduxStoreType } from "../../types";
 
 interface Props {
   validation: boolean;
