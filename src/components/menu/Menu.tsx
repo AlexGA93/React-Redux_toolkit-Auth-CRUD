@@ -14,7 +14,7 @@ const Menu = () => {
             <span className="title">{menuItem.title}</span>
             {
               menuItem.listItems.map((listItem: listItemType) => (
-                <Link to={`private/layout/${listItem.url}`} className='listItem' key={listItem.id}>
+                <Link to={`layout/${listItem.url}`} className='listItem' key={listItem.id}>
                   
                   <img src={handleMenuIcon(listItem.icon)} alt="icon" />
                   

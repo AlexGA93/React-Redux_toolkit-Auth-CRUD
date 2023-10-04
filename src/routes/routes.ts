@@ -10,4 +10,6 @@ export const PrivateRoutes = {
     LAYOUT: 'layout',
     ADMIN:'admin',
     HOME: 'home',
+    USERS: 'users',
+    PRODUCTS: 'products'
 };

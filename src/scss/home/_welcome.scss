@@ -1,6 +1,9 @@
 .welcome {
+  padding: 0;
+  margin: 0;
   display: grid;
   place-items: center;
+  height: 100vh;
 
   .my-atropos {
     .container {

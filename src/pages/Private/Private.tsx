@@ -1,6 +1,6 @@
 import { lazy } from "react";
 import { Route } from "react-router-dom";
-import { Menu } from "../../components";
+import { Footer, Menu, Navbar } from "../../components";
 import { PrivateRoutes } from "../../routes";
 import { NotFoundRoute } from "../../utils";
 
@@ -10,6 +10,7 @@ const Layout = lazy(() => import("./layout/Layout"));
 const Private = () => {
   return (
     <div className="main">
+      <Navbar />
       <div className="container">
         <div className="menuContainer">
           <Menu />
@@ -20,6 +21,7 @@ const Private = () => {
           </NotFoundRoute>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

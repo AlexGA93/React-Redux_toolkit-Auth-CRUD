@@ -14,7 +14,7 @@ export const menu: menuItemType[] = [
       {
         id: 2,
         title: "Profile",
-        url: "/profile",
+        url: "profile",
         icon: "user.svg",
       },
     ],
@@ -26,25 +26,25 @@ export const menu: menuItemType[] = [
       {
         id: 1,
         title: "Users",
-        url: "/layout/users",
+        url: "users",
         icon: "user.svg",
       },
       {
         id: 2,
         title: "Products",
-        url: "/layout/products",
+        url: "products",
         icon: "product.svg",
       },
       {
         id: 3,
         title: "Orders",
-        url: "/orders",
+        url: "orders",
         icon: "order.svg",
       },
       {
         id: 4,
         title: "Posts",
-        url: "/posts",
+        url: "posts",
         icon: "post2.svg",
       },
     ],
